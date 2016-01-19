@@ -28,12 +28,21 @@ import rx.Observable;
 
 public final class CreatingObservablesUsingFrom {
 
+	private static void arrayObservable(final String[] arr) {
+		final Observable<String> observable = Observable.<String> from(arr);
+		observable.subscribe(System.out::println);
+
+	}
+
 	public static void main(final String[] args) {
 		final List<String> strings = Lists.newArrayList("a", "b", "c", "d");
 		final Observable<String> observable = Observable.from(strings);
 		observable.subscribe(System.out::println);
 		observable.subscribe(alphabet -> System.out.println(alphabet + "+"), System.out::println, System.out::println);
 		pathPbservable();
+		final String[] arr = new String[4];
+		strings.toArray(arr);
+		arrayObservable(arr);
 	}
 
 	private static void pathPbservable() {
