@@ -1,2 +1,2 @@
-# RxJava-Practice
+# RxJava Practice
 Reactive Programming Practice using RxJava
